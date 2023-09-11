@@ -11,9 +11,9 @@ Topics Covered:
 """
 
 # TODO: Students, fill out statement of work header
-# Student Name in Canvas:
-# Penn ID:
-# Did you do this homework on your own (yes / no):
+# Student Name in Canvas: Soohyun Choi
+# Penn ID: 79153661
+# Did you do this homework on your own (yes / no): yes
 # Resources used outside course materials:
 
 # import statements
