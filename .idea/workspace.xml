@@ -5,7 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b9b1fbd9-dc56-4daf-b6b1-0f61b21952c0" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/[CIT 5900] Homework.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HW3_icecream/HW3_standard starter.py" beforeDir="false" afterPath="$PROJECT_DIR$/HW3_icecream/HW3_standard starter.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,6 +92,7 @@
       <workItem from="1693972855593" duration="3532000" />
       <workItem from="1693976394636" duration="1298000" />
       <workItem from="1694187802201" duration="60000" />
+      <workItem from="1694465427559" duration="390000" />
     </task>
     <servers />
   </component>
