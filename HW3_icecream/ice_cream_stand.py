@@ -9,7 +9,6 @@ Topics Covered:
 - Functions and helper functions
 - Formatted Strings
 """
-import random
 # TODO: Students, fill out statement of work header
 # Student Name in Canvas: Soohyun Choi
 # Penn ID: 79153661
@@ -55,7 +54,7 @@ def get_order_qty(customer_name):
 
     # TODO: Write your code here
     try:
-        order_qty = int(input(f"Welcome {customer_name}! How many ice creams will you be ordering (1 to 5)? "))
+        order_qty += int(input(f"Welcome {customer_name}! How many ice creams will you be ordering (1 to 5)? "))
         if order_qty < 1 or order_qty > 5:
             order_qty = get_order_qty(customer_name)
     except ValueError:
@@ -83,11 +82,11 @@ def get_ice_cream_flavor(ice_cream_flavors):
 
     # get picked flavor from first letter and ask again if answer is not a valid flavor
     if first_letter == "v":
-        flavor_picked = ice_cream_flavors[0]
+        flavor_picked += ice_cream_flavors[0]
     elif first_letter == "c":
-        flavor_picked = ice_cream_flavors[1]
+        flavor_picked += ice_cream_flavors[1]
     elif first_letter == "s":
-        flavor_picked = ice_cream_flavors[2]
+        flavor_picked += ice_cream_flavors[2]
     else:
         flavor_picked = get_ice_cream_flavor(ice_cream_flavors)
 
@@ -112,11 +111,11 @@ def get_ice_cream_size(ice_cream_sizes):
 
     # get picked flavor from first letter and ask again if answer is not a valid flavor
     if first_letter == "s":
-        size_picked = ice_cream_sizes[0]
+        size_picked += ice_cream_sizes[0]
     elif first_letter == "m":
-        size_picked = ice_cream_sizes[1]
+        size_picked += ice_cream_sizes[1]
     elif first_letter == "l":
-        size_picked = ice_cream_sizes[2]
+        size_picked += ice_cream_sizes[2]
     else:
         size_picked = get_ice_cream_size(ice_cream_sizes)
 
@@ -199,7 +198,7 @@ def get_first_letter_of_user_input(question):
         if answer:
             break
 
-    first_letter = answer[0]
+    first_letter += answer[0]
     return first_letter
 
 
@@ -245,7 +244,7 @@ def random_queue_length():
     Hint: See https://www.w3schools.com/python/ref_random_randint.asp
     Returns: The resulting random integer.
     """
-    return random.randint(2, 5)
+    return randint(2, 5)
 
 
 def main():
@@ -292,7 +291,7 @@ def main():
         #   Hint: See https://www.w3schools.com/python/ref_random_choice.asp
         #   Note: It is OK to have duplicate names in the queue.
         for i in range(num_of_customers_in_queue):
-            customers_in_queue.append(random.choice(customer_names))
+            customers_in_queue.append(choice(customer_names))
 
         while queue_is_open:
             # TODO: Extract the first customer (index 0) from the customers_in_queue and save it to

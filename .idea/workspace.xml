@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="b9b1fbd9-dc56-4daf-b6b1-0f61b21952c0" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HW3_icecream/HW3_icecream.docx" beforeDir="false" afterPath="$PROJECT_DIR$/HW3_icecream/HW3_icecream.docx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HW3_icecream/ice_cream_stand.py" beforeDir="false" afterPath="$PROJECT_DIR$/HW3_icecream/ice_cream_stand.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -95,7 +94,7 @@
       <workItem from="1693976394636" duration="1298000" />
       <workItem from="1694187802201" duration="60000" />
       <workItem from="1694465427559" duration="767000" />
-      <workItem from="1694580091505" duration="12242000" />
+      <workItem from="1694580091505" duration="14019000" />
     </task>
     <servers />
   </component>
@@ -114,7 +113,7 @@
     </option>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/_CIT_5900__Homework$ice_cream_stand.coverage" NAME="ice_cream_stand Coverage Results" MODIFIED="1694592214469" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/HW3_icecream" />
+    <SUITE FILE_PATH="coverage/_CIT_5900__Homework$ice_cream_stand.coverage" NAME="ice_cream_stand Coverage Results" MODIFIED="1694622660506" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/HW3_icecream" />
     <SUITE FILE_PATH="coverage/_CIT_5900__Homework$HW2.coverage" NAME="HW2 Coverage Results" MODIFIED="1693787663907" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
