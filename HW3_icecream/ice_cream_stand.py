@@ -55,8 +55,10 @@ def get_order_qty(customer_name):
     # TODO: Write your code here
     try:
         order_qty += int(input(f"Welcome {customer_name}! How many ice creams will you be ordering (1 to 5)? "))
+        # if order_qty is not in [1, 5], prompt function again
         if order_qty < 1 or order_qty > 5:
             order_qty = get_order_qty(customer_name)
+    # if user input can't be cast into integer, print error message and prompt function again
     except ValueError:
         print("Please enter a valid integer")
         order_qty = get_order_qty(customer_name)
@@ -81,7 +83,7 @@ def get_ice_cream_flavor(ice_cream_flavors):
         # get first letter of user input
         first_letter = get_first_letter_of_user_input("Which flavor would you like (v/c/s)? ")
 
-        # get picked flavor from first letter and ask again if answer is not a valid flavor
+        # find picked flavor based on first letter
         if first_letter == "v":
             flavor_picked += ice_cream_flavors[0]
             break
@@ -112,7 +114,7 @@ def get_ice_cream_size(ice_cream_sizes):
         # get first letter of user input
         first_letter = get_first_letter_of_user_input("Which size would you like (s/m/l)? ")
 
-        # get picked flavor from first letter and ask again if answer is not a valid flavor
+        # find picked size based on first letter
         if first_letter == "s":
             size_picked += ice_cream_sizes[0]
             break
@@ -132,6 +134,7 @@ def get_ice_cream_order_price(ice_cream_size, ice_cream_prices, ice_cream_sizes)
     Returns: The equivalent price of an ice cream size. Example: Returns 4.99 if ice_cream_size is 'Small'
     """
     # TODO: Write your code here
+    # find an index of size and use the index to get matched price
     return ice_cream_prices[ice_cream_sizes.index(ice_cream_size)]
 
 
@@ -196,7 +199,7 @@ def get_first_letter_of_user_input(question):
     """
     first_letter = ""
     # TODO: Write your code here
-    # ask until answer is not empty
+    # ask until answer is not empty to avoid SyntaxError
     while True:
         answer = input(question).strip().lower()
         if answer:
@@ -213,6 +216,8 @@ def are_all_customers_served(customer_queue_length):
     Returns: True or False
     """
     # TODO: Write your code here
+    # if customer_queue_length is 0, return True. Otherwise, return False
+    # (based on the fact that boolean value of 0 is False)
     return not bool(customer_queue_length)
 
 
