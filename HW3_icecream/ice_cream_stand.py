@@ -13,7 +13,7 @@ Topics Covered:
 # Student Name in Canvas: Soohyun Choi
 # Penn ID: 79153661
 # Did you do this homework on your own (yes / no): yes
-# Resources used outside course materials:
+# Resources used outside course materials: X
 
 # import statements
 from random import randint, choice
@@ -77,18 +77,20 @@ def get_ice_cream_flavor(ice_cream_flavors):
     """
     flavor_picked = ""
     # TODO: Write your code here
-    # get first letter of user input
-    first_letter = get_first_letter_of_user_input("Which flavor would you like (v/c/s)? ")
+    while True:
+        # get first letter of user input
+        first_letter = get_first_letter_of_user_input("Which flavor would you like (v/c/s)? ")
 
-    # get picked flavor from first letter and ask again if answer is not a valid flavor
-    if first_letter == "v":
-        flavor_picked += ice_cream_flavors[0]
-    elif first_letter == "c":
-        flavor_picked += ice_cream_flavors[1]
-    elif first_letter == "s":
-        flavor_picked += ice_cream_flavors[2]
-    else:
-        flavor_picked = get_ice_cream_flavor(ice_cream_flavors)
+        # get picked flavor from first letter and ask again if answer is not a valid flavor
+        if first_letter == "v":
+            flavor_picked += ice_cream_flavors[0]
+            break
+        elif first_letter == "c":
+            flavor_picked += ice_cream_flavors[1]
+            break
+        elif first_letter == "s":
+            flavor_picked += ice_cream_flavors[2]
+            break
 
     return flavor_picked
 
@@ -106,18 +108,20 @@ def get_ice_cream_size(ice_cream_sizes):
     """
     size_picked = ""
     # TODO: Write your code here
-    # get first letter of user input
-    first_letter = get_first_letter_of_user_input("Which size would you like (s/m/l)? ")
+    while True:
+        # get first letter of user input
+        first_letter = get_first_letter_of_user_input("Which size would you like (s/m/l)? ")
 
-    # get picked flavor from first letter and ask again if answer is not a valid flavor
-    if first_letter == "s":
-        size_picked += ice_cream_sizes[0]
-    elif first_letter == "m":
-        size_picked += ice_cream_sizes[1]
-    elif first_letter == "l":
-        size_picked += ice_cream_sizes[2]
-    else:
-        size_picked = get_ice_cream_size(ice_cream_sizes)
+        # get picked flavor from first letter and ask again if answer is not a valid flavor
+        if first_letter == "s":
+            size_picked += ice_cream_sizes[0]
+            break
+        elif first_letter == "m":
+            size_picked += ice_cream_sizes[1]
+            break
+        elif first_letter == "l":
+            size_picked += ice_cream_sizes[2]
+            break
 
     return size_picked
 
@@ -169,7 +173,7 @@ def take_customer_order(customer_name, ice_cream_flavors, ice_cream_sizes, ice_c
         print(f"You ordered a {size_picked} {flavor_picked} for ${price:.2f}")
 
     # TODO: Print the customer's total_bill
-    print(f"Your total bill is: {total_bill}")
+    print(f"Your total bill is: {total_bill:.2f}")
 
     # TODO: Once orders are all taken, the customer should be asked if they still want to Pay or Cancel
     #  "Would you like to pay or cancel the order (p/c)? "
@@ -209,7 +213,7 @@ def are_all_customers_served(customer_queue_length):
     Returns: True or False
     """
     # TODO: Write your code here
-    return False if customer_queue_length else True
+    return not bool(customer_queue_length)
 
 
 def print_current_status(customers_served, tracking_revenue):

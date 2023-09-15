@@ -38,7 +38,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "/Users/soohyun-choi/Home/01_Penn/01_Fall 2023/[CIT 5900] Programming Languages and Techniques/[CIT 5900] Homework/HW3_icecream",
+    "last_opened_file_path": "/Users/soohyun-choi/Home/01_Penn/01_Fall 2023/[CIT 5900] Programming Languages and Techniques/[CIT 5900] Homework",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -94,7 +94,10 @@
       <workItem from="1693976394636" duration="1298000" />
       <workItem from="1694187802201" duration="60000" />
       <workItem from="1694465427559" duration="767000" />
-      <workItem from="1694580091505" duration="14019000" />
+      <workItem from="1694580091505" duration="15110000" />
+      <workItem from="1694658255381" duration="1794000" />
+      <workItem from="1694717673506" duration="1260000" />
+      <workItem from="1694723279550" duration="3613000" />
     </task>
     <servers />
   </component>
@@ -113,7 +116,7 @@
     </option>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/_CIT_5900__Homework$ice_cream_stand.coverage" NAME="ice_cream_stand Coverage Results" MODIFIED="1694622660506" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/HW3_icecream" />
+    <SUITE FILE_PATH="coverage/_CIT_5900__Homework$ice_cream_stand.coverage" NAME="ice_cream_stand Coverage Results" MODIFIED="1694743130333" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/HW3_icecream" />
     <SUITE FILE_PATH="coverage/_CIT_5900__Homework$HW2.coverage" NAME="HW2 Coverage Results" MODIFIED="1693787663907" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
