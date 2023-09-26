@@ -322,8 +322,64 @@ def computer_play(computer_tank, computer_cards, water_cards_pile, power_cards_p
     print(f"Computer's water level is at: {computer_tank}")
     print(f"Your water level is at: {opponent_tank}")
 
+    # calculate lack of players
+    computer_lack = 75 - computer_tank
+    human_lack = 75 - opponent_tank
+
+    is_discard = False
+
+    # if human lack <= 10, select a card based on human water tank level
+    if human_lack <= 10:
+        if "DOT" in computer_cards:
+            selected_card = "DOT"
+        elif "SOH" in computer_cards:
+            selected_card = "SOH"
+        else:
+            selected_card = max(computer_cards[:3])
+    # otherwise, select a card based on computer water tank level
+    else:
+        # if computer has only 1 value water cards, discard one
+        if sum(computer_cards[:3]) == 3:
+            selected_card = 1
+            is_discard = True
+        # otherwise, select a card
+        elif computer_lack == 75:
+            selected_card = max(computer_cards[:3])
+        elif 38 <= computer_lack < 75:
+            selected_card = "DMT" if "DMT" in computer_cards else max(computer_cards[:3])
+        elif 1 < computer_lack < 38:
+            selected_card = max(computer_cards[:3])
+        else:  # computer_lack == 1
+            selected_card = min(computer_cards[:3])
+
+    # take action with the selected card
+    if is_discard:
+        print(f"Computer discarding card: {selected_card}")
+        discard_card(selected_card, computer_cards, water_cards_pile, power_cards_pile)
+        computer_tank_update, human_tank_update = computer_tank, opponent_tank
+    else:
+        print(f"Computer playing with card: {selected_card}")
+        computer_tank_update, human_tank_update = use_card(computer_tank, selected_card, computer_cards, opponent_tank)
+
+    # handle overflows
+    computer_tank_update = apply_overflow(computer_tank_update)
+
+    # draw a new card of the same type they just used / discarded
+    if type(selected_card) == int:
+        new = get_card_from_pile(water_cards_pile, 0)
+    else:  # type(card) == str
+        new = get_card_from_pile(power_cards_pile, 0)
+
+    computer_cards.append(new)
+    # keep human's hand arranged after adding the new card
+    arrange_cards(computer_cards)
+
+    # print the new tank value for the player and opponent
+    print(f"Computer's water level is now at: {computer_tank_update}")
+    print(f"Your water level is now at: {human_tank_update}")
+
     # computer's turn: don't print their hand and the new card they draw
-    result = (computer_tank, opponent_tank)
+    result = (computer_tank_update, human_tank_update)
     return result
 
 
@@ -357,6 +413,7 @@ def main():
     # choose a random player to go first
     rand_num = randint(0, 1)
 
+    # if random int is 0, human is the first player
     if rand_num == 0:
         player, opponent = human, computer
         is_human_turn = True
@@ -364,7 +421,7 @@ def main():
         player, opponent = computer, human
         is_human_turn = False
 
-    print(f"\nThe {player['name']} Player has been selected to go first")
+    print(f"\nThe {player['name']} Player has been selected to go first.")
 
     # take turns until one player wins
     while True:
