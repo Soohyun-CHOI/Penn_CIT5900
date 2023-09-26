@@ -3,6 +3,7 @@ from random import randint
 
 import water_tank
 
+
 class Test(unittest.TestCase):
 
     ######################################
@@ -66,7 +67,6 @@ class Test(unittest.TestCase):
         self.assertNotIn(power_shuffle, unshuffled, "It doesn't look like the power cards shuffled")
 
     def test_setup_power_cards_card_count(self):
-
         power_shuffle = water_tank.setup_power_cards()
         self.assertEqual(10, power_shuffle.count("SOH"), "There should be 10 SOH cards after shuffling")
         self.assertEqual(2, power_shuffle.count("DOT"), "There should be 2 DOT cards after shuffling")
@@ -184,7 +184,6 @@ class Test(unittest.TestCase):
     ########################################
 
     def test_use_water_card(self):
-
         # player_tank, card_used, player_cards, opponent_tank
         player_cards = [1, 5, 10, "DOT", "DMT"]
         player_tank, opponent_tank = water_tank.use_card(25, 1, player_cards, 25)
@@ -195,7 +194,6 @@ class Test(unittest.TestCase):
         self.assertTrue(len(player_cards) == 4, "Card should be removed from player's hand when it is used.")
 
     def test_use_soh_card(self):
-
         # player_tank, card_used, player_cards, opponent_tank
         player_cards = [1, 5, 10, "DOT", "SOH"]
         player_tank, opponent_tank = water_tank.use_card(25, "SOH", player_cards, 25)
@@ -215,7 +213,6 @@ class Test(unittest.TestCase):
         self.assertTrue(len(player_cards) == 4, "Card should be removed from player's hand when it is used.")
 
     def test_use_dmt_card(self):
-
         # player_tank, card_used, player_cards, opponent_tank
         player_cards = [1, 5, 10, "DOT", "DMT"]
         player_tank, opponent_tank = water_tank.use_card(25, "DMT", player_cards, 25)
@@ -226,7 +223,6 @@ class Test(unittest.TestCase):
         self.assertTrue(len(player_cards) == 4, "Card should be removed from player's hand when it is used.")
 
     def test_use_dot_card(self):
-
         # player_tank, card_used, player_cards, opponent_tank
         player_cards = [1, 5, 10, "DOT", "DMT"]
         player_tank, opponent_tank = water_tank.use_card(25, "DOT", player_cards, 25)
@@ -241,7 +237,6 @@ class Test(unittest.TestCase):
     #######################################
 
     def test_discard_card_water(self):
-
         # player_tank, card_used, player_cards, opponent_tank
         water_cards_pile = [1, 5, 10, 5, 10, 1]
         power_cards_pile = ['SOH', 'DMT', 'DMT', 'DOT']
@@ -253,7 +248,6 @@ class Test(unittest.TestCase):
                              "Using the discard card does not function correctly.")
 
     def test_discard_card_power(self):
-
         # player_tank, card_used, player_cards, opponent_tank
         water_cards_pile = [1, 5, 10, 5, 10, 1]
         power_cards_pile = ['SOH', 'DMT', 'DMT', 'DOT']

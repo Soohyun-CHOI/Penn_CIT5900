@@ -25,11 +25,11 @@ def get_user_input(question):
     answer_strip = answer.strip()
 
     # if length is 0 (after removing whitespaces), reprompt
-    if len(answer_strip) == 0:
+    if not answer_strip:
         get_user_input(question)
 
-    # if the input is a number, cast and return an integer type
     try:
+        # if the input is a number, cast and return an integer type
         return int(answer_strip)
     except ValueError:
         # if the input is a power card, return the power card as uppercase
@@ -48,11 +48,7 @@ def setup_water_cards():
        list: water cards pile (list of integers)
     """
     # HINT: use shuffle func from random module
-    list_1 = [1 for _ in range(30)]
-    list_5 = [5 for _ in range(15)]
-    list_10 = [10 for _ in range(8)]
-
-    water_cards_pile = list_1 + list_5 + list_10
+    water_cards_pile = [1 for _ in range(30)] + [5 for _ in range(15)] + [10 for _ in range(8)]
     shuffle(water_cards_pile)
 
     return water_cards_pile
@@ -67,11 +63,7 @@ def setup_power_cards():
         list: power cards pile (list of strings)
     """
     # HINT: use shuffle func from random module
-    list_soh = ["SOH" for _ in range(10)]
-    list_dot = ["DOT" for _ in range(2)]
-    list_dmt = ["DMT" for _ in range(3)]
-
-    power_cards_pile = list_soh + list_dot + list_dmt
+    power_cards_pile = ["SOH" for _ in range(10)] + ["DOT" for _ in range(2)] + ["DMT" for _ in range(3)]
     shuffle(power_cards_pile)
 
     return power_cards_pile
@@ -193,8 +185,6 @@ def use_card(player_tank, card_to_use, player_cards, opponent_tank):
         elif card_to_use == "DMT":
             player_tank *= 2
 
-    # apply overflow if necessary
-
     result = (player_tank, opponent_tank)
     return result
 
@@ -242,7 +232,7 @@ def check_pile(pile, pile_type):
         pile_type (str): "water" | "power"
     """
     if not pile:
-        setup_water_cards() if pile_type == "water" else setup_power_cards()
+        pile += setup_water_cards() if pile_type == "water" else setup_power_cards()
 
 
 def human_play(human_tank, human_cards, water_cards_pile, power_cards_pile, opponent_tank):
@@ -278,7 +268,7 @@ def human_play(human_tank, human_cards, water_cards_pile, power_cards_pile, oppo
             # print the card the human player uses
             print(f"Playing with card: {card}")
             # use the card
-            use_card(human_tank, card, human_cards, opponent_tank)
+            human_tank_update, computer_tank_update = use_card(human_tank, card, human_cards, opponent_tank)
             break
         elif answer == "d":
             while True:
@@ -290,10 +280,11 @@ def human_play(human_tank, human_cards, water_cards_pile, power_cards_pile, oppo
             print(f"Discarding card: {card}")
             # discard the card
             discard_card(card, human_cards, water_cards_pile, power_cards_pile)
+            human_tank_update, computer_tank_update = human_tank, opponent_tank
             break
 
     # handle overflows
-    human_tank = apply_overflow(human_tank)
+    human_tank_update = apply_overflow(human_tank_update)
 
     # draw a new card of the same type they just used / discarded
     if type(card) == int:
@@ -308,11 +299,11 @@ def human_play(human_tank, human_cards, water_cards_pile, power_cards_pile, oppo
     arrange_cards(human_cards)
 
     # print the new tank value for the player and opponent
-    print(f"Your water level is now at: {human_tank}")
-    print(f"Computer's water level is now at: {opponent_tank}")
+    print(f"Your water level is now at: {human_tank_update}")
+    print(f"Computer's water level is now at: {computer_tank_update}")
     print(f"Your cards are now: {human_cards}")
 
-    result = (human_tank, opponent_tank)
+    result = (human_tank_update, computer_tank_update)
     return result
 
 
@@ -327,8 +318,13 @@ def computer_play(computer_tank, computer_cards, water_cards_pile, power_cards_p
     Returns:
         2-tuple: (1) computer's water tank level, (2) human's water tank level
     """
+    # show the human player's water level and then computer player's
+    print(f"Computer's water level is at: {computer_tank}")
+    print(f"Your water level is at: {opponent_tank}")
+
     # computer's turn: don't print their hand and the new card they draw
-    pass
+    result = (computer_tank, opponent_tank)
+    return result
 
 
 def main():
@@ -377,9 +373,9 @@ def main():
 
         # make player's move
         if is_human_turn:
-            human_play(player["tank"], player["cards"], water_cards_pile, power_cards_pile, opponent["tank"])
+            player["tank"], opponent["tank"] = human_play(player["tank"], player["cards"], water_cards_pile, power_cards_pile, opponent["tank"])
         else:
-            computer_play(player["tank"], player["cards"], water_cards_pile, power_cards_pile, opponent["tank"])
+            player["tank"], opponent["tank"] = computer_play(player["tank"], player["cards"], water_cards_pile, power_cards_pile, opponent["tank"])
 
         # check if player's tank is filled (wins)
         if filled_tank(player["tank"]):
