@@ -5,9 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b9b1fbd9-dc56-4daf-b6b1-0f61b21952c0" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/HW5_make_website/test_read_file.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HW5_make_website/HW5_make_website.docx.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/HW5_make_website/HW5_make_website.docx.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HW5_make_website/TestResumes/resume_bad_name_lowercase/resume.html" beforeDir="false" afterPath="$PROJECT_DIR$/HW5_make_website/TestResumes/resume_bad_name_lowercase/resume.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HW5_make_website/TestResumes/resume_courses_w_whitespace/resume.html" beforeDir="false" afterPath="$PROJECT_DIR$/HW5_make_website/TestResumes/resume_courses_w_whitespace/resume.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HW5_make_website/TestResumes/resume_courses_weird_punc/resume.html" beforeDir="false" afterPath="$PROJECT_DIR$/HW5_make_website/TestResumes/resume_courses_weird_punc/resume.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HW5_make_website/TestResumes/resume_projects_w_whitespace/resume.html" beforeDir="false" afterPath="$PROJECT_DIR$/HW5_make_website/TestResumes/resume_projects_w_whitespace/resume.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HW5_make_website/TestResumes/resume_projects_with_blanks/resume.html" beforeDir="false" afterPath="$PROJECT_DIR$/HW5_make_website/TestResumes/resume_projects_with_blanks/resume.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HW5_make_website/TestResumes/resume_template_email_w_whitespace/resume.html" beforeDir="false" afterPath="$PROJECT_DIR$/HW5_make_website/TestResumes/resume_template_email_w_whitespace/resume.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HW5_make_website/TestResumes/resume_wrong_email/resume.html" beforeDir="false" afterPath="$PROJECT_DIR$/HW5_make_website/TestResumes/resume_wrong_email/resume.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HW5_make_website/make_website.py" beforeDir="false" afterPath="$PROJECT_DIR$/HW5_make_website/make_website.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HW5_make_website/make_website_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/HW5_make_website/make_website_test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HW5_make_website/resume.html" beforeDir="false" afterPath="$PROJECT_DIR$/HW5_make_website/resume.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,7 +102,7 @@
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for make_website_test.MakeWebsite_Test.test_create_email_link" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests for make_website_test.MakeWebsite_Test.test_creat_html_projects" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="[CIT 5900] Homework" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -103,11 +113,11 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;make_website_test.MakeWebsite_Test.test_create_email_link&quot;" />
+      <option name="_new_target" value="&quot;make_website_test.MakeWebsite_Test.test_creat_html_projects&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for make_website_test.MakeWebsite_Test.test_surround_block" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests for make_website_test.MakeWebsite_Test.test_create_html_basic_info_sections" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="[CIT 5900] Homework" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -118,47 +128,47 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;make_website_test.MakeWebsite_Test.test_surround_block&quot;" />
+      <option name="_new_target" value="&quot;make_website_test.MakeWebsite_Test.test_create_html_basic_info_sections&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for water_tank_test.Test.test_check_empty_power_pile" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests for make_website_test.MakeWebsite_Test.test_create_html_courses" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="[CIT 5900] Homework" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/HW4_water_tank" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/HW5_make_website" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;water_tank_test.Test.test_check_empty_power_pile&quot;" />
+      <option name="_new_target" value="&quot;make_website_test.MakeWebsite_Test.test_create_html_courses&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests in water_tank_test.py" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests for make_website_test.MakeWebsite_Test.test_write_html_contents" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="[CIT 5900] Homework" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/HW4_water_tank" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/HW5_make_website" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;$PROJECT_DIR$/HW4_water_tank/water_tank_test.py&quot;" />
-      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <option name="_new_target" value="&quot;make_website_test.MakeWebsite_Test.test_write_html_contents&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Python tests.Python tests for make_website_test.MakeWebsite_Test" />
-        <item itemvalue="Python tests.Python tests for make_website_test.MakeWebsite_Test.test_create_email_link" />
-        <item itemvalue="Python tests.Python tests for make_website_test.MakeWebsite_Test.test_surround_block" />
-        <item itemvalue="Python tests.Python tests in water_tank_test.py" />
-        <item itemvalue="Python tests.Python tests for water_tank_test.Test.test_check_empty_power_pile" />
+        <item itemvalue="Python tests.Python tests for make_website_test.MakeWebsite_Test.test_write_html_contents" />
+        <item itemvalue="Python tests.Python tests for make_website_test.MakeWebsite_Test.test_create_html_basic_info_sections" />
+        <item itemvalue="Python tests.Python tests for make_website_test.MakeWebsite_Test.test_create_html_courses" />
+        <item itemvalue="Python tests.Python tests for make_website_test.MakeWebsite_Test.test_creat_html_projects" />
       </list>
     </recent_temporary>
   </component>
@@ -191,7 +201,7 @@
       <workItem from="1695713693201" duration="11677000" />
       <workItem from="1695833709316" duration="3072000" />
       <workItem from="1696361795791" duration="3602000" />
-      <workItem from="1696398796681" duration="18332000" />
+      <workItem from="1696398796681" duration="30302000" />
     </task>
     <servers />
   </component>
@@ -210,10 +220,10 @@
     </option>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/_CIT_5900__Homework$make_website.coverage" NAME="make_website Coverage Results" MODIFIED="1696477240866" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/HW5_make_website" />
+    <SUITE FILE_PATH="coverage/_CIT_5900__Homework$make_website.coverage" NAME="make_website Coverage Results" MODIFIED="1696525583903" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/HW5_make_website" />
     <SUITE FILE_PATH="coverage/_CIT_5900__Homework$ice_cream_stand.coverage" NAME="ice_cream_stand Coverage Results" MODIFIED="1694747789734" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/HW3_icecream" />
     <SUITE FILE_PATH="coverage/_CIT_5900__Homework$HW2.coverage" NAME="HW2 Coverage Results" MODIFIED="1693787663907" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/_CIT_5900__Homework$water_tank.coverage" NAME="water_tank Coverage Results" MODIFIED="1695752336158" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/HW4_water_tank" />
-    <SUITE FILE_PATH="coverage/_CIT_5900__Homework$.coverage" NAME=" Coverage Results" MODIFIED="1696478170809" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/HW5_make_website" />
+    <SUITE FILE_PATH="coverage/_CIT_5900__Homework$.coverage" NAME=" Coverage Results" MODIFIED="1696526174255" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/HW5_make_website" />
   </component>
 </project>

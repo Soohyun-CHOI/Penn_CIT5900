@@ -5,7 +5,7 @@ def read_file(path):
     Args:
         path (str): file path
     Returns:
-        list: all lines in txt file
+        list: all lines in file
     """
     with open(path, "r") as f:
         lines = f.readlines()
@@ -46,7 +46,7 @@ def handle_email(email):
     2. Removes leading or trailing whitespace.
 
     Args:
-        email (str): email
+        email (str): email (with @ sign)
     Returns:
         str: empty string if 'email' is invalid, otherwise revised email
     """
@@ -83,7 +83,7 @@ def handle_courses(courses):
     2. Removes leading or trailing whitespace.
 
     Args:
-        courses (str): single line of courses
+        courses (str): single line of courses (with the word 'Courses')
             - format: Courses --punctuations-- course 1, course 2, ...
     Returns:
         list: all the actual courses
@@ -97,8 +97,9 @@ def handle_courses(courses):
         if c.isalpha():
             start_idx = idx
             break
-    # makes actual courses list
-    courses_actual = courses_new[start_idx:].split(",")
+
+    # makes actual courses list: if there is no actual courses, make it an empty list
+    courses_actual = courses_new[start_idx:].split(",") if start_idx else []
 
     # removes leading or trailing whitespace in each course
     courses_strip = [course.strip() for course in courses_actual]
@@ -222,7 +223,55 @@ def create_email_link(email_address):
     return f"<a href=\"mailto:{email_address}\">{email_at}</a>"
 
 
-def write_html_contents(html_template, resume):
+def create_html_basic_info_sections(name, email):
+    """
+    Makes the basic information section in html format.
+
+    Args:
+        name (str): name contents
+        email (str): email contents
+    Returns:
+        str: basic information section in html format
+    """
+    name_contents = surround_block("h1", name)
+    email_address = create_email_link(email)
+    email_contents = surround_block("p", f"Email: {email_address}")
+    return surround_block("div", name_contents + email_contents)
+
+
+def create_html_projects(projects):
+    """
+    Makes the projects section in html format.
+
+    Args:
+        projects (list): projects contents (not empty)
+    Returns:
+        str: projects section in html format
+    """
+    title_projects = surround_block("h2", "Projects")
+    project_names = ""
+    for project in projects:
+        project_names += surround_block("li", project)
+    projects_contents = surround_block("ul", project_names)
+    return surround_block("div", title_projects + projects_contents)
+
+
+def create_html_courses(courses):
+    """
+    Makes the projects section in html format.
+
+    Args:
+        courses (list): courses contents (not empty)
+    Returns:
+        str: courses section in html format
+    """
+    title_courses = surround_block("h3", "Courses")
+    courses_names = ", ".join(courses)
+    courses_contents = surround_block("span", courses_names)
+    return surround_block("div", title_courses + courses_contents)
+
+
+def create_html_contents(html_template, resume):
     """
     Args:
         html_template (str): template html file path
@@ -238,31 +287,17 @@ def write_html_contents(html_template, resume):
     html_lines.append("<div id=\"page-wrap\">\n")
 
     # make the basic information section
-    name = surround_block("h1", resume["name"])
-    email_address = create_email_link(resume["email"])
-    email = surround_block("p", f"Email: {email_address}")
-
-    basic_info_section = surround_block("div", name + email)
+    basic_info_section = create_html_basic_info_sections(resume["name"], resume["email"])
     html_lines.append(basic_info_section + "\n")
 
     # make the projects section
     if resume["projects"]:
-        title_projects = surround_block("h2", "Projects")
-        project_names = ""
-        for project in resume["projects"]:
-            project_names += surround_block("li", project)
-        projects = surround_block("ul", project_names)
-
-        projects_section = surround_block("div", title_projects + projects)
+        projects_section = create_html_projects(resume["projects"])
         html_lines.append(projects_section + "\n")
 
     # make the courses section
     if resume["courses"]:
-        title_courses = surround_block("h3", "Courses")
-        courses_names = ", ".join(resume["courses"])
-        courses = surround_block("span", courses_names)
-
-        courses_section = surround_block("div", title_courses + "\n" + courses + "\n")
+        courses_section = create_html_courses(resume["courses"])
         html_lines.append(courses_section + "\n")
 
     # close tags
@@ -289,7 +324,7 @@ def generate_html(txt_input_file, html_output_file):
     # make resume contents in html format
     lines = read_file(txt_input_file)
     resume = classify_resume(lines)
-    html_contents = write_html_contents("resume_template.html", resume)
+    html_contents = create_html_contents("resume_template.html", resume)
 
     # create new html file with 'html_contents'
     with open(html_output_file, "w") as f:
