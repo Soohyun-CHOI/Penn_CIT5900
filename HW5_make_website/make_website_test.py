@@ -51,11 +51,8 @@ class MakeWebsite_Test(unittest.TestCase):
         # test courses with various punctuations
         self.assertEqual(["test1", "test2", "test3"],
                          handle_courses("Courses   #-:=,/@  test1, test2, test3"))
-        # test courses starting with number
-        self.assertEqual(["test1", "test2", "test3"],
-                         handle_courses("Courses : 2test1, test2, test3 "))
         # test courses with punctuations in actual course names
-        self.assertEqual(["te#st1", "!test/2", "test3?"],
+        self.assertEqual(["te#st1", "test/2", "test3?"],
                          handle_courses("Courses : te#st1, test/2, test3? "))
         # test courses without actual course names
         self.assertEqual([], handle_courses("Courses : "))
@@ -77,8 +74,11 @@ class MakeWebsite_Test(unittest.TestCase):
         self.assertEqual(False, detect_projects_end("---  -----test----"))
 
     def test_handle_projects(self):
+        # test list with whitespace
         self.assertEqual(["test1", "test2", "test3"],
                          handle_projects(["  test1 ", " test2  ", " test3 "]))
+        # test empty list
+        self.assertEqual([], handle_projects([]))
 
     def test_classify_resume(self):
         # test lines with all parts

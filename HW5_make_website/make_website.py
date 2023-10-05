@@ -171,7 +171,7 @@ def classify_resume(lines):
     resume["name"] = handle_name(lines[0])
 
     # iterates all the lines in resume except name (the first line)
-    for line in enumerate(lines[1:]):
+    for line in lines:
         # when the line is an email
         if detect_email(line):
             resume["email"] = handle_email(line)
