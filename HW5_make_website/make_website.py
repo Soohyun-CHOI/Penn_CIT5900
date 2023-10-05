@@ -23,9 +23,7 @@ def handle_name(name):
         str: "Invalid Name" if 'name' is invalid, otherwise revised name
     """
     name_strip = name.strip()
-    if name_strip[0].isupper():
-        return name_strip
-    return "Invalid Name"
+    return name_strip if name_strip[0].isupper() else "Invalid Name"
 
 
 def detect_email(line):
@@ -84,7 +82,7 @@ def handle_courses(courses):
 
     Args:
         courses (str): single line of courses (with the word 'Courses')
-            - format: Courses --punctuations-- course 1, course 2, ...
+            - format: Courses [punctuations] course 1, course 2, ...
     Returns:
         list: all the actual courses
     """
@@ -98,7 +96,8 @@ def handle_courses(courses):
             start_idx = idx
             break
 
-    # makes actual courses list: if there is no actual courses, make it an empty list
+    # makes actual courses list
+    # If there is no actual courses, makes it an empty list
     courses_actual = courses_new[start_idx:].split(",") if start_idx else []
 
     # removes leading or trailing whitespace in each course
@@ -145,42 +144,44 @@ def handle_projects(projects):
 
 def classify_resume(lines):
     """
-    Classifies contents of resume into parts and revise formats.
+    Classifies contents of resume parts and revise formats.
 
     Args:
         lines (list): all lines in resume
     Returns:
         dict: resume info classified by parts of resume
     """
+    # initializes the resume format by parts
     resume = {
         "name": "",
         "email": "",
         "courses": [],
         "projects": []
     }
+
+    # sets a variable to detect if the current line is in projects
     is_project = False
     projects_lines = []
 
-    for idx, line in enumerate(lines):
-        # detects the first line as a name
-        if idx == 0:
-            resume["name"] = handle_name(line)
-        else:
-            # when the line is an email
-            if detect_email(line):
-                resume["email"] = handle_email(line)
-            # when the line is courses
-            elif detect_courses(line):
-                resume["courses"] = handle_courses(line)
-            # when the line is the start of projects
-            elif detect_projects_start(line):
-                is_project = True
-                continue
-            # when the line is the end of projects
-            elif detect_projects_end(line):
-                is_project = False
+    # detects the first line as a name
+    resume["name"] = handle_name(lines[0])
 
-        # if the line in projects, appends it to list
+    for line in enumerate(lines):
+        # when the line is an email
+        if detect_email(line):
+            resume["email"] = handle_email(line)
+        # when the line is courses
+        elif detect_courses(line):
+            resume["courses"] = handle_courses(line)
+        # when the line is the start of projects
+        elif detect_projects_start(line):
+            is_project = True
+            continue
+        # when the line is the end of projects
+        elif detect_projects_end(line):
+            is_project = False
+
+        # if the line is in projects, appends it to the list
         if is_project:
             projects_lines.append(line)
 
@@ -249,9 +250,11 @@ def create_html_projects(projects):
         str: projects section in html format
     """
     title_projects = surround_block("h2", "Projects")
+
     project_names = ""
     for project in projects:
         project_names += surround_block("li", project)
+
     projects_contents = surround_block("ul", project_names)
     return surround_block("div", title_projects + projects_contents)
 
@@ -279,30 +282,29 @@ def create_html_contents(html_template, resume):
     Returns:
         str: resume in html format
     """
-    # read the template file and remove the last two tags
+    # reads the template file and remove the last two tags
     lines = read_file(html_template)
     html_lines = lines[:-2]
 
-    # add the first line
+    # adds the first line
     html_lines.append("<div id=\"page-wrap\">\n")
 
-    # make the basic information section
+    # makes the basic information section
     basic_info_section = create_html_basic_info_sections(resume["name"], resume["email"])
     html_lines.append(basic_info_section + "\n")
 
-    # make the projects section
+    # makes the projects section
     if resume["projects"]:
         projects_section = create_html_projects(resume["projects"])
         html_lines.append(projects_section + "\n")
 
-    # make the courses section
+    # makes the courses section
     if resume["courses"]:
         courses_section = create_html_courses(resume["courses"])
         html_lines.append(courses_section + "\n")
 
-    # close tags
-    close_tags = ["</div>", "</body>", "</html>"]
-    html_lines += close_tags
+    # closes tags
+    html_lines += ["</div>", "</body>", "</html>"]
 
     return "".join(html_lines)
 
@@ -312,14 +314,6 @@ def generate_html(txt_input_file, html_output_file):
     Loads given txt_input_file,
     gets the name, email address, list of projects, and list of courses,
     then writes the info to the given html_output_file.
-
-    # Hint(s):
-    # call function(s) to load given txt_input_file
-    # call function(s) to get name
-    # call function(s) to get email address
-    # call function(s) to get list of projects
-    # call function(s) to get list of courses
-    # call function(s) to write the name, email address, list of projects, and list of courses to the given html_output_file
     """
     # make resume contents in html format
     lines = read_file(txt_input_file)

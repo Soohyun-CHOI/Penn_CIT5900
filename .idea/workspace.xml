@@ -5,19 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b9b1fbd9-dc56-4daf-b6b1-0f61b21952c0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/HW5_make_website/test_read_file.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HW5_make_website/HW5_make_website.docx.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/HW5_make_website/HW5_make_website.docx.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HW5_make_website/TestResumes/resume_bad_name_lowercase/resume.html" beforeDir="false" afterPath="$PROJECT_DIR$/HW5_make_website/TestResumes/resume_bad_name_lowercase/resume.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HW5_make_website/TestResumes/resume_courses_w_whitespace/resume.html" beforeDir="false" afterPath="$PROJECT_DIR$/HW5_make_website/TestResumes/resume_courses_w_whitespace/resume.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HW5_make_website/TestResumes/resume_courses_weird_punc/resume.html" beforeDir="false" afterPath="$PROJECT_DIR$/HW5_make_website/TestResumes/resume_courses_weird_punc/resume.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HW5_make_website/TestResumes/resume_projects_w_whitespace/resume.html" beforeDir="false" afterPath="$PROJECT_DIR$/HW5_make_website/TestResumes/resume_projects_w_whitespace/resume.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HW5_make_website/TestResumes/resume_projects_with_blanks/resume.html" beforeDir="false" afterPath="$PROJECT_DIR$/HW5_make_website/TestResumes/resume_projects_with_blanks/resume.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HW5_make_website/TestResumes/resume_template_email_w_whitespace/resume.html" beforeDir="false" afterPath="$PROJECT_DIR$/HW5_make_website/TestResumes/resume_template_email_w_whitespace/resume.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HW5_make_website/TestResumes/resume_wrong_email/resume.html" beforeDir="false" afterPath="$PROJECT_DIR$/HW5_make_website/TestResumes/resume_wrong_email/resume.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HW5_make_website/make_website.py" beforeDir="false" afterPath="$PROJECT_DIR$/HW5_make_website/make_website.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HW5_make_website/make_website_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/HW5_make_website/make_website_test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HW5_make_website/resume.html" beforeDir="false" afterPath="$PROJECT_DIR$/HW5_make_website/resume.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -201,7 +191,7 @@
       <workItem from="1695713693201" duration="11677000" />
       <workItem from="1695833709316" duration="3072000" />
       <workItem from="1696361795791" duration="3602000" />
-      <workItem from="1696398796681" duration="30302000" />
+      <workItem from="1696398796681" duration="32438000" />
     </task>
     <servers />
   </component>

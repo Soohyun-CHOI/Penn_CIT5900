@@ -56,7 +56,7 @@ class MakeWebsite_Test(unittest.TestCase):
                          handle_courses("Courses : 2test1, test2, test3 "))
         # test courses with punctuations in actual course names
         self.assertEqual(["te#st1", "!test/2", "test3?"],
-                         handle_courses("Courses : =te#st1, !test/2, test3? "))
+                         handle_courses("Courses : te#st1, test/2, test3? "))
         # test courses without actual course names
         self.assertEqual([], handle_courses("Courses : "))
 
@@ -200,7 +200,7 @@ class MakeWebsite_Test(unittest.TestCase):
             create_html_courses(["course1", "course2"])
         )
 
-    def test_write_html_contents(self):
+    def test_create_html_contents(self):
         with open("resume_template.html", "r") as f:
             lines = f.readlines()
 
@@ -217,6 +217,34 @@ class MakeWebsite_Test(unittest.TestCase):
                                     "courses": ["course1", "course2"],
                                     "projects": ["project1", "project2"]
                                 })
+        )
+        # test resume without courses
+        self.assertEqual(
+            f"{''.join(lines[:-2])}<div id=\"page-wrap\">\n"
+            + f"{create_html_basic_info_sections('Soohyun Choi', 'soohyun@upenn.edu')}\n"
+            + f"{create_html_projects(['project1', 'project2'])}\n"
+            + "</div></body></html>",
+            create_html_contents("resume_template.html",
+                                 {
+                                     "name": "Soohyun Choi",
+                                     "email": "soohyun@upenn.edu",
+                                     "courses": [],
+                                     "projects": ["project1", "project2"]
+                                 })
+        )
+        # test resume without projects
+        self.assertEqual(
+            f"{''.join(lines[:-2])}<div id=\"page-wrap\">\n"
+            + f"{create_html_basic_info_sections('Soohyun Choi', 'soohyun@upenn.edu')}\n"
+            + f"{create_html_courses(['course1', 'course2'])}\n"
+            + "</div></body></html>",
+            create_html_contents("resume_template.html",
+                                 {
+                                     "name": "Soohyun Choi",
+                                     "email": "soohyun@upenn.edu",
+                                     "courses": ["course1", "course2"],
+                                     "projects": []
+                                 })
         )
 
 
