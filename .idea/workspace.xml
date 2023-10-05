@@ -6,6 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="b9b1fbd9-dc56-4daf-b6b1-0f61b21952c0" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HW5_make_website/HW5_make_website.docx.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/HW5_make_website/HW5_make_website.docx.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HW5_make_website/make_website.py" beforeDir="false" afterPath="$PROJECT_DIR$/HW5_make_website/make_website.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HW5_make_website/resume_template.html" beforeDir="false" afterPath="$PROJECT_DIR$/HW5_make_website/resume_template.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -187,6 +190,9 @@
       <workItem from="1694745631049" duration="3018000" />
       <workItem from="1695672643537" duration="28192000" />
       <workItem from="1695713693201" duration="11677000" />
+      <workItem from="1695833709316" duration="3072000" />
+      <workItem from="1696361795791" duration="3602000" />
+      <workItem from="1696398796681" duration="17132000" />
     </task>
     <servers />
   </component>
@@ -205,6 +211,7 @@
     </option>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/_CIT_5900__Homework$make_website.coverage" NAME="make_website Coverage Results" MODIFIED="1696477240866" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/HW5_make_website" />
     <SUITE FILE_PATH="coverage/_CIT_5900__Homework$ice_cream_stand.coverage" NAME="ice_cream_stand Coverage Results" MODIFIED="1694747789734" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/HW3_icecream" />
     <SUITE FILE_PATH="coverage/_CIT_5900__Homework$HW2.coverage" NAME="HW2 Coverage Results" MODIFIED="1693787663907" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/_CIT_5900__Homework$.coverage" NAME=" Coverage Results" MODIFIED="1695713339001" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/HW4_water_tank" />
