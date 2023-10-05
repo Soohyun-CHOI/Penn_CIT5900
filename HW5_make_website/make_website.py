@@ -88,7 +88,6 @@ def handle_courses(courses):
     Returns:
         list: all the actual courses
     """
-    # TODO: check if other characters can come before the "Courses"
     # removes "Courses" in the courses string
     courses_new = courses.strip()[7:]
     start_idx = 0
@@ -189,7 +188,6 @@ def classify_resume(lines):
     return resume
 
 
-# TODO: given function
 def surround_block(tag, text):
     """
     Surrounds the given text with the given html tag and returns the string.
@@ -203,7 +201,6 @@ def surround_block(tag, text):
     return f"<{tag}>{text}</{tag}>"
 
 
-# TODO: given function
 def create_email_link(email_address):
     """
     Creates an email link with the given email_address.
@@ -222,7 +219,7 @@ def create_email_link(email_address):
         use the email address as is and don't replace anything.
     """
     email_at = email_address.replace("@", "[aT]")
-    return f"<a href=\"{email_address}\">{email_at}</a>"
+    return f"<a href=\"mailto:{email_address}\">{email_at}</a>"
 
 
 def write_html_contents(html_template, resume):
@@ -275,7 +272,6 @@ def write_html_contents(html_template, resume):
     return "".join(html_lines)
 
 
-# TODO: given function
 def generate_html(txt_input_file, html_output_file):
     """
     Loads given txt_input_file,
@@ -300,7 +296,6 @@ def generate_html(txt_input_file, html_output_file):
         f.write(html_contents)
 
 
-# TODO: given function
 def main():
     # DO NOT REMOVE OR UPDATE THIS CODE
     # generate resume.html file from provided sample resume.txt

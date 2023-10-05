@@ -1,9 +1,8 @@
 import unittest
-
 from make_website import *
 
-class MakeWebsite_Test(unittest.TestCase):
 
+class MakeWebsite_Test(unittest.TestCase):
     def test_surround_block(self):
         # test text with surrounding h1 tags
         self.assertEqual("<h1>Eagles</h1>", surround_block('h1', 'Eagles'))
@@ -20,24 +19,22 @@ class MakeWebsite_Test(unittest.TestCase):
                                         'hendrerit at at urna.'))
 
     def test_create_email_link(self):
-
         # test email with @ sign
         self.assertEqual(
             '<a href="mailto:lbrandon@wharton.upenn.edu">lbrandon[aT]wharton.upenn.edu</a>',
             create_email_link('lbrandon@wharton.upenn.edu')
         )
-
         # test email with @ sign
         self.assertEqual(
             '<a href="mailto:krakowsky@outlook.com">krakowsky[aT]outlook.com</a>',
             create_email_link('krakowsky@outlook.com')
         )
-
         # test email without @ sign
         self.assertEqual(
             '<a href="mailto:lbrandon.at.seas.upenn.edu">lbrandon.at.seas.upenn.edu</a>',
             create_email_link('lbrandon.at.seas.upenn.edu')
         )
+
 
 if __name__ == '__main__':
     unittest.main()
