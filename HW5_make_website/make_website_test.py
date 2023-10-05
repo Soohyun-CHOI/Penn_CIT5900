@@ -4,7 +4,7 @@ from make_website import *
 
 class MakeWebsite_Test(unittest.TestCase):
     def test_read_file(self):
-        self.assertEqual(["This\n", "is\n", "a test"], read_file("test_read_file.txt"))
+        self.assertEqual("I.M. Student\n", read_file("resume.txt")[0])
 
     def test_handle_name(self):
         # test name with whitespace
@@ -211,12 +211,12 @@ class MakeWebsite_Test(unittest.TestCase):
             + f"{create_html_courses(['course1', 'course2'])}\n"
             + "</div></body></html>",
             create_html_contents("resume_template.html",
-                                {
-                                    "name": "Soohyun Choi",
-                                    "email": "soohyun@upenn.edu",
-                                    "courses": ["course1", "course2"],
-                                    "projects": ["project1", "project2"]
-                                })
+                                 {
+                                     "name": "Soohyun Choi",
+                                     "email": "soohyun@upenn.edu",
+                                     "courses": ["course1", "course2"],
+                                     "projects": ["project1", "project2"]
+                                 })
         )
         # test resume without courses
         self.assertEqual(
