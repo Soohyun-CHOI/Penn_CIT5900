@@ -355,6 +355,8 @@ def main():
 
     # If you want to test additional resume files, call the generate_html function with the given .txt file
     # and desired name of output .html file
+    generate_html('TestResumes/resume_no_courses/resume.txt', 'TestResumes/resume_no_courses/resume.html')
+    generate_html('TestResumes/resume_no_projects/resume.txt', 'TestResumes/resume_no_projects/resume.html')
 
 
 if __name__ == '__main__':
