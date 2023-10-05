@@ -14,13 +14,14 @@ def read_file(path):
 
 def handle_name(name):
     """
-    1. Checks if the first latter in 'name' is uppercase.
-    2. Removes leading or trailing whitespace.
+    Checks if the first latter in 'name' is uppercase.
+    Removes leading or trailing whitespace.
 
     Args:
         name (str): the name of resume
     Returns:
-        str: "Invalid Name" if 'name' is invalid, otherwise revised name
+        str: "Invalid Name" if 'name' is invalid,
+            otherwise 'name' without leading or trailing whitespace
     """
     name_strip = name.strip()
     return name_strip if name_strip[0].isupper() else "Invalid Name"
@@ -40,13 +41,14 @@ def detect_email(line):
 
 def handle_email(email):
     """
-    1. Checks if 'email' is a valid email.
-    2. Removes leading or trailing whitespace.
+    Checks if 'email' is in a valid format.
+    Removes leading or trailing whitespace.
 
     Args:
         email (str): email (with @ sign)
     Returns:
-        str: empty string if 'email' is invalid, otherwise revised email
+        str: empty string if 'email' is invalid,
+            otherwise 'email' without leading or trailing whitespace
     """
     # removes leading or trailing whitespace
     email_strip = email.strip()
@@ -60,6 +62,7 @@ def handle_email(email):
     # checks if the email does not contain any digits or numbers
     if any(e.isdigit() for e in email_strip):
         return ""
+
     return email_strip
 
 
@@ -77,8 +80,8 @@ def detect_courses(line):
 
 def handle_courses(courses):
     """
-    1. Finds the actual course names from 'line'.
-    2. Removes leading or trailing whitespace.
+    Finds the actual course names from 'line'.
+    Removes leading or trailing whitespace.
 
     Args:
         courses (str): single line of courses (with the word 'Courses')
@@ -97,7 +100,7 @@ def handle_courses(courses):
             break
 
     # makes actual courses list
-    # If there is no actual courses, makes it an empty list
+    # if there is no actual courses, makes it an empty list
     courses_actual = courses_new[start_idx:].split(",") if start_idx else []
 
     # removes leading or trailing whitespace in each course
@@ -131,8 +134,8 @@ def detect_projects_end(line):
 
 def handle_projects(projects):
     """
-    1. Removes empty projects.
-    2. Removes leading or trailing whitespaces.
+    Removes empty projects.
+    Removes leading or trailing whitespaces.
 
     Args:
         projects (list): all the projects
@@ -144,12 +147,13 @@ def handle_projects(projects):
 
 def classify_resume(lines):
     """
-    Classifies contents of resume parts and revise formats.
+    Classifies the contents of resume into 4 parts and revise formats.
+    4 parts: name, email, courses, projects.
 
     Args:
         lines (list): all lines in resume
     Returns:
-        dict: resume info classified by parts of resume
+        dict: resume contents classified into 4 parts
     """
     # initializes the resume format by parts
     resume = {
@@ -166,7 +170,8 @@ def classify_resume(lines):
     # detects the first line as a name
     resume["name"] = handle_name(lines[0])
 
-    for line in enumerate(lines):
+    # iterates all the lines in resume except name (the first line)
+    for line in enumerate(lines[1:]):
         # when the line is an email
         if detect_email(line):
             resume["email"] = handle_email(line)
@@ -206,11 +211,13 @@ def surround_block(tag, text):
 def create_email_link(email_address):
     """
     Creates an email link with the given email_address.
-    To cut down on spammers harvesting the email address from the webpage,
-    displays the email address with [aT] instead of @.
+    Displays the email address with [aT] instead of @.
 
     Args:
-        email_address (str):
+        email_address (str): email address (not always contains @)
+
+    Returns:
+        str: revised email address
 
     Example:
         Given the email address: lbrandon@wharton.upenn.edu
@@ -226,7 +233,7 @@ def create_email_link(email_address):
 
 def create_html_basic_info_sections(name, email):
     """
-    Makes the basic information section in html format.
+    Creates the basic information section in html format.
 
     Args:
         name (str): name contents
@@ -242,7 +249,7 @@ def create_html_basic_info_sections(name, email):
 
 def create_html_projects(projects):
     """
-    Makes the projects section in html format.
+    Creates the projects section in html format.
 
     Args:
         projects (list): projects contents (not empty)
@@ -261,7 +268,7 @@ def create_html_projects(projects):
 
 def create_html_courses(courses):
     """
-    Makes the projects section in html format.
+    Creates the projects section in html format.
 
     Args:
         courses (list): courses contents (not empty)
@@ -276,6 +283,8 @@ def create_html_courses(courses):
 
 def create_html_contents(html_template, resume):
     """
+    Creates whole resume in html format.
+
     Args:
         html_template (str): template html file path
         resume (dict): resume contents classified by parts
@@ -311,16 +320,19 @@ def create_html_contents(html_template, resume):
 
 def generate_html(txt_input_file, html_output_file):
     """
-    Loads given txt_input_file,
-    gets the name, email address, list of projects, and list of courses,
-    then writes the info to the given html_output_file.
+    Gets resume info from 'txt_input_file'.
+    Writes the info to 'html_output_file'.
+
+    Args:
+        txt_input_file (str): path of txt file containing resume info
+        html_output_file (str): path of html file
     """
-    # make resume contents in html format
+    # makes resume contents in html format
     lines = read_file(txt_input_file)
     resume = classify_resume(lines)
     html_contents = create_html_contents("resume_template.html", resume)
 
-    # create new html file with 'html_contents'
+    # creates or rewrites the (new) html file with 'html_contents'
     with open(html_output_file, "w") as f:
         f.write(html_contents)
 
